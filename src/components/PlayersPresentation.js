@@ -1,9 +1,9 @@
 import React from "react";
-import { Players } from "../shared/ListOfPlayers";
-export default function PlayersData() {
+export default function PlayersPresentation({ players }) {
+	//console.log(players);
 	return (
 		<div className="container">
-			{Players.map((player) => (
+			{players.map((player) => (
 				<div className="column">
 					<div className="card">
 						<img src={player.img} alt="player.name" />
