@@ -1,4 +1,4 @@
-export const Players = [
+export const PlayersData = [
 	{
 		id: 1,
 		name: "Cristiano Ronaldo",

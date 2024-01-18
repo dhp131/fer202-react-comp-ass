@@ -1,16 +1,28 @@
 import React from "react";
-import { Players } from "../shared/ListOfPlayers";
-export default function PlayersData() {
+import { PlayersData } from "../shared/ListOfPlayers";
+import { useState } from "react";
+
+export default function Players() {
+	const [selectedPlayer, setPlayer] = useState(null);
+
 	return (
 		<div className="container">
-			{Players.map((player) => (
-				<div className="column">
+			{PlayersData.map((currentPlayer) => (
+				<div className="column" key={currentPlayer.id}>
 					<div className="card">
-						<img src={player.img} alt="player.name" />
-						<h3>{player.name}</h3>
-						<p className="title">{player.club}</p>
+						<img src={currentPlayer.img} alt={currentPlayer.name} />
+						<h3>{currentPlayer.name}</h3>
+						<p className="title">{currentPlayer.club}</p>
 						<p>
-							<button>Detail</button>
+							<button
+								onClick={() => {
+									setPlayer(currentPlayer);
+								}}
+							>
+								<a href="#popup1" id="openPopUp">
+									Detail
+								</a>
+							</button>
 						</p>
 					</div>
 				</div>
