@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
 	list-style: none;
 	display: flex;
 	justify-content: space-between;
@@ -7,15 +7,33 @@
 	padding-left: 50px;
 	padding-right: 85%;
 	margin: 0;
+} */
+nav {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	background-color: black;
 }
-.navbar li a {
-	color: white;
+ul {
+	list-style: none;
+	display: flex;
+}
+ul li {
+	padding-right: 40px;
+}
+.active1 {
 	text-decoration: none;
+	color: white;
+}
+.switch {
+	padding-top: 10px;
+	padding-right: 30px;
 }
 .active {
 	background-color: rgb(160, 160, 46);
-	color: white;
 	padding: 10px 10px;
+	text-decoration: none;
+	color: white;
 }
 .container {
 	display: flex;
