@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
+import { Link } from "react-router-dom";
 export default function Navigation() {
 	const { theme, toggle, dark } = useContext(ThemeContext);
 	return (
@@ -12,11 +13,20 @@ export default function Navigation() {
 				}}
 			>
 				<ul>
-					<li>
-						<a className="active" href="#home">
-							Home
-						</a>
-					</li>
+					<Link to="/">
+						<li>
+							<a
+								className="active"
+								href="#home"
+								style={{
+									backgroundColor: theme.backgroundColor,
+									color: theme.color,
+								}}
+							>
+								Home
+							</a>
+						</li>
+					</Link>
 					<li>
 						<a
 							style={{
@@ -42,16 +52,24 @@ export default function Navigation() {
 						</a>
 					</li>
 					<li>
-						<a
+						<Link
+							to="/contact"
 							style={{
 								backgroundColor: theme.backgroundColor,
 								color: theme.color,
 							}}
-							className="active1"
-							href="#contact"
 						>
-							Contact
-						</a>
+							<a
+								style={{
+									backgroundColor: theme.backgroundColor,
+									color: theme.color,
+								}}
+								className="active1"
+								href="#contact"
+							>
+								Contact
+							</a>
+						</Link>
 					</li>
 				</ul>
 				<div className="switch" style={{ position: "relative" }}>

@@ -1,25 +1,22 @@
 import "./App.css";
-// import Footer from "./components/Footer";
-// import Main from "./components/Main";
-// import Navigation from "./components/Navigation";
-import { Route, Routes } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import HomePage from "./components/HomePage";
-import NewsPage from "./components/NewsPage";
-import ContactPage from "./components/ContactPage";
+import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
+import { Routes, Route } from "react-router-dom";
+import Players from "./components/Players";
 import DetailPage from "./components/DetailPage";
-
+import ContactPage from "./components/ContactPage";
 function App() {
 	return (
-		<>
-			<NavBar />
+		<div>
+			<Navigation />
 			<Routes>
-				<Route path="/" element={<HomePage />} />
-				<Route path="news" element={<NewsPage />} />
-				<Route path="/contacts" element={<ContactPage />} />
-				<Route path="/detail/:id" element={<DetailPage />} />
+				<Route path="/" element={<Players />}></Route>
+				<Route path="/detail/:id" element={<DetailPage />}></Route>
+				<Route path="/contact" element={<ContactPage />}></Route>
 			</Routes>
-		</>
+			<Footer />
+		</div>
 	);
 }
+
 export default App;
